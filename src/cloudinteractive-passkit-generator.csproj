@@ -41,12 +41,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="dotnet-passbook" Version="3.2.4" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Services\PassKit\" />
   </ItemGroup>
 
 </Project>
