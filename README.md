@@ -31,3 +31,8 @@
 >유효한 Apple Pass Type ID Certificate를 발급받기 위해서 Apple Developer Program이 필요합니다.
 
 ## How to Use
+
+## Dependencies
+- **dotnet-passbook** - https://www.nuget.org/packages/dotnet-passbook/3.2.4?_src=template
+- **Newtonsoft.Json** - https://www.nuget.org/packages/Newtonsoft.Json/13.0.3?_src=template
+- **Microsoft.VisualStudio.Azure.Containers.Tools.Targets** - https://www.nuget.org/packages/Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.17.2?_src=template
