@@ -1,5 +1,4 @@
 ﻿using System.Collections.ObjectModel;
-using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 using Newtonsoft.Json;
 namespace Cloudinteractive.PassKitGenerator.Services.Template
 {
@@ -42,8 +41,8 @@ namespace Cloudinteractive.PassKitGenerator.Services.Template
                     var metadata = File.ReadAllText(metadataFile.FullName);
                     var templateObject = JsonConvert.DeserializeObject<Template>(metadata);
 
-                    var iconImg = FileToByteArray(location + "/img/icon.png");
-                    var logoImg = FileToByteArray(location + "/img/logo.png");
+                    var iconImg = Util.FileToByteArray(location + "/img/icon.png");
+                    var logoImg = Util.FileToByteArray(location + "/img/logo.png");
 
                     if (iconImg is null)
                     {
@@ -70,18 +69,6 @@ namespace Cloudinteractive.PassKitGenerator.Services.Template
 
             _logger.Log(LogLevel.Information, $"Loaded total {dict.Count} templates in dict.");
             TemplateDictionary = dict.AsReadOnly();
-        }
-
-        private static byte[]? FileToByteArray(string filePath)
-        { 
-            var fileInfo = new FileInfo(filePath);
-            if (!fileInfo.Exists) return null;
-
-            using var stream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
-            int len = Convert.ToInt32(stream.Length);
-            BinaryReader reader = new BinaryReader(stream);
-            byte[] buff = reader.ReadBytes(len);
-            return buff;
         }
     }
 }
