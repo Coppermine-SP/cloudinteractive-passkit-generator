@@ -1,8 +1,41 @@
 ﻿@{
-    ViewData["Title"] = "PassKit Generator GUI";
+    ViewData["Title"] = "배포";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+@section Styles{
+    <link rel="stylesheet" href="css/index.css"/>
+}
+
+@section Scripts{
+    <script src="~/js/index.js"></script>
+}
+
+<div class="d-flex flex-column justify-content-center align-items-center text-center" style="height: 90vh">
+    <div id="non-apple-device-warning" class="row" style="display:none">
+        <div class="alert alert-warning" role="alert">
+            <i class="bi bi-exclamation-triangle-fill m-2"></i>
+            Apple 기기에서 Safari를 사용해야만 패스를 받을 수 있습니다.
+        </div>
+    </div>
+    <div class="row">
+        <div>
+            <img src="img/cloud.png" width="130px"/>
+        </div>
+        <h2 class="fw-bold">인증 코드</h2>
+        <div class="mb-3 mt-3">
+            <input style="margin: 0" id="code-1" type="text" maxlength="1"/>
+            <input id="code-2" type="text" maxlength="1"/>
+            <input id="code-3" type="text" maxlength="1"/>
+            <input id="code-4" type="text" maxlength="1"/>
+        </div>
+        <p>인증 코드로 귀하의 패스를 Wallet에 추가하십시오.</p>
+        <a href="/privacy">개인정보는 어떻게 관리됩니까?</a>
+
+    </div>
+    <div class="row mt-4" style="justify-content: center">
+        <div id="repo" class="alert alert-dark" role="alert">
+            <i class="bi bi-github" style="margin-right: 5px;"></i>
+            See this repository on GitHub: <a href="https://github.com/Coppermine-SP/cloudinteractive-passkit-generator">cloudinteractive-passkit-generator</a>
+        </div>
+    </div>
 </div>
