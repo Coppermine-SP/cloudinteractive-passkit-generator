@@ -7,7 +7,7 @@
 
 패스의 탬플릿을 생성하고 이를 통해 다양한 패스를 생성할 수 있습니다.
 
-<img src="img/title.png" style="height: 40%">
+<img src="img/title.png" style="height: 40%;width=auto">
 
 >[!WARNING]
 >**ID 카드, 출입증과 같은 공문서를 발급 기관의 명시적인 허가 없이 무단으로 생성하지 마십시오.**
