@@ -18,9 +18,16 @@ namespace Cloudinteractive.PassKitGenerator.Controllers
             return View();
         }
 
+        [Route("Privacy")]
         public IActionResult Privacy()
         {
             return View();
+        }
+
+        [Route("Auth")]
+        public IActionResult Auth(string code)
+        {
+            return View("AuthFailed");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
