@@ -1,0 +1,28 @@
+﻿html, body {
+    overflow: hidden;
+}
+
+/*Authentication number field*/
+input {
+    -moz-appearance: textfield;
+    width: 50px;
+    height: 50px;
+    font-size: 32px;
+    margin-left: 10px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+@media only screen and (max-width:576px) {
+    #repo {
+        max-width: 90%;
+    }
+}
+
+
+.ios-safari input, .ios-safari textarea, .ios-safari select {
+    font-size: 24px; /* for webkit-appererance font sizing issue */
+}
