@@ -1,4 +1,7 @@
-﻿namespace Cloudinteractive.PassKitGenerator.Services.Template
+﻿using Passbook.Generator;
+using Passbook.Generator.Fields;
+
+namespace Cloudinteractive.PassKitGenerator.Services.Template
 {
     public class Template
     {
@@ -18,17 +21,21 @@
         public string ForegroundColor { get; set; }
 
         //PrimaryField
+        public string PrimaryFieldKey {get; set; }
         public string PrimaryFieldLabel { get; set; }
 
         //SecondaryField
         public bool UsingSecondaryField { get; set; }
+        public string? SecondaryFieldKey { get; set; }
         public string? SecondaryFieldLabel { get; set; }
 
         //AuxiliaryField
         public bool UsingFirstAuxiliaryField { get; set; }
+        public string? FirstAuxiliaryFieldKey { get; set; }
         public string? FirstAuxiliaryFieldLabel { get; set; }
 
         public bool UsingSecondAuxiliaryField { get; set; }
+        public string? SecondAuxiliaryFieldKey { get; set; }
         public string? SecondAuxiliaryFieldLabel { get; set; }
 
         //BackField
@@ -49,5 +56,7 @@
             IconImage = icon;
             LogoImage = logo;
         }
+
+
     }
 }
