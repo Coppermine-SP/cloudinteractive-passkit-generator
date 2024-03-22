@@ -1,6 +1,59 @@
 ﻿@{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "소프트웨어 약관";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+@section Styles{
+    <style>
+        body {
+            padding: 10px;
+        }
+
+        .container {
+            max-width: 800px !important;
+        }
+
+        li {
+            margin-top: 7px;
+        }
+    </style>
+}
+
+<div class="d-flex flex-column justify-content-center" style="min-height: 90vh">
+    <a onclick="history.back()" class="text-light" style="text-decoration: none;">
+        <i class="bi bi-chevron-left"></i>
+        돌아가기
+    </a>
+    <h3 class="mt-3">소프트웨어 약관</h3>
+    <hr/>
+    <div class="alert alert-warning w-100" role="alert">
+        <i class="bi bi-exclamation-triangle-fill m-2"></i>
+        이 소프트웨어를 사용하기 전에 반드시 아래의 개인 정보에 대한 사항과 면책 조항을 확인하고 동의해야 합니다.<br/>
+        귀하가 이 소프트웨어를 사용한 것은, 아래 약관에 묵시적으로 동의 한 것으로 간주됩니다.
+    </div>
+    <div class="card text-start w-100 mb-3">
+        <div class="card-body">
+            <b>클라우드인터렉티브는 사용자의 개인 정보를 보호하기 위해 최선을 다하고 있습니다.</b>
+            <br/>
+            <ul>
+                <li>관리자가 패스 발급에 사용한 모든 정보는 서버에 저장되지 않습니다.</li>
+                <li>모든 패스는 서버의 인-메모리에만 저장되며, 사용자가 패스를 다운받는 즉시 서버에서 삭제됩니다.</li>
+                <li>모든 정보는 용도 이외에 다른 곳에 사용되지 않습니다.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card text-start w-100 mb-3">
+        <div class="card-body">
+            <b>이 소프트웨어로 인해 발생한 모든 법적 책임, 불이익은 패스 발급자의 책임입니다.</b>
+            <ul>
+                <li>ID 카드, 출입증과 같은 공문서를 발급 기관의 명시적인 허가 없이 무단으로 생성하는 것은 법에 저촉될 수 있습니다.</li>
+                <li>이 소프트웨어를 사용하여 발급한 패스는 실제 매장에서 인식이 불가능하여 사용할 수 없거나, 사용을 거절 당할 수 있습니다.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="repo" class="alert alert-dark w-100" role="alert">
+        <i class="bi bi-github m-2"></i>
+        GitHub에서 이 프로젝트를 확인하십시오: <a href="https://github.com/Coppermine-SP/cloudinteractive-passkit-generator">cloudinteractive-passkit-generator</a>
+    </div>
+</div>
