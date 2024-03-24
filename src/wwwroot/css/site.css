@@ -5,3 +5,7 @@ html, body {
     font-family: 'Pretendard Variable', sans-serif;
     user-select: none;
 }
+
+.alert-icon {
+    margin-right: 15px !important;
+}
