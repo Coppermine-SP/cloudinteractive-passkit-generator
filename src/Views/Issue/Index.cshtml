@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "패스 발급";
 }
+
 @section Styles{
     <style>
         .container {
@@ -28,7 +29,7 @@
     <script src="js/issue.js"></script>
 }
 
-<div class="d-flex flex-column justify-content-center" style="min-height: 90vh">
+<div class="d-flex flex-column" style="min-height: 90vh">
     <div class="row">
         <h3 class="mb-3 mt-2">새 패스 발급</h3>
         <hr/>
@@ -52,7 +53,7 @@
 
     <div class="row">
         <div class="card text-start w-100 mb-3">
-            <div class="card-body">
+            <div class="card-body p-3">
                 <form id="issueForm" asp-action="Index" onsubmit="submitForm();">
                     <h5 class="option-header">탬플릿 선택</h5>
                     <select id="templateSelect" class="p-2" asp-for="TemplateKey" onchange="templateSelection()">
