@@ -14,7 +14,7 @@ namespace Cloudinteractive.PassKitGenerator.Models
         public string? SecondAuxiliaryFieldValue { get; set; }
         public IFormFile? ThumbnailImage { get; set; }
 
-        public bool TemplateKeyValidation()
+        public bool Validation()
         {
             Template template;
             if (!TemplateManager.TemplateDictionary.TryGetValue(TemplateKey, out template)) return false;

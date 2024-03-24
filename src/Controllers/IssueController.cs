@@ -14,13 +14,12 @@ namespace Cloudinteractive.PassKitGenerator.Controllers
         }
 
         [HttpGet]
-        [AutoValidateAntiforgeryToken]
         public IActionResult Index(IssueModel? model)
         {
             if(model == null) model = new IssueModel();
 
             //TemplateKey validation check.
-            if (model.TemplateKey is not null && !model.TemplateKeyValidation())
+            if (model.TemplateKey is not null && !model.Validation())
             {
                 return View("Error", new ErrorViewModel()
                 {
@@ -33,11 +32,11 @@ namespace Cloudinteractive.PassKitGenerator.Controllers
         }
 
         [HttpPost]
-        [AutoValidateAntiforgeryToken]
+        [ValidateAntiForgeryToken]
         public IActionResult Request(IssueModel? model)
         {
             //model validation check.
-            if (model is not null && !model.TemplateKeyValidation())
+            if (model is not null && !model.Validation())
             {
                 return View("Error", new ErrorViewModel()
                 {
