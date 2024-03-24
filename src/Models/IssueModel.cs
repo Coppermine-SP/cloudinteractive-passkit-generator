@@ -12,6 +12,7 @@ namespace Cloudinteractive.PassKitGenerator.Models
 
         public string? FirstAuxiliaryFieldValue { get; set; }
         public string? SecondAuxiliaryFieldValue { get; set; }
+        public string? BarcodeValue { get; set; }
         public IFormFile? ThumbnailImage { get; set; }
 
         public bool Validation()

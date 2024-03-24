@@ -101,6 +101,13 @@
                             <input class="p-2" type="text" asp-for="SecondAuxiliaryFieldValue" required/>
                         }
 
+                        @if (Model.Template.UsingBarcode)
+                        {
+                            <hr/>
+                            <h5 class="option-header">바코드 데이터</h5>
+                            <input class="p-2" type="text" asp-for="BarcodeValue" required/>
+                        }
+
                         @if (Model.Template.UsingThumbnail)
                         {
                             <hr/>
