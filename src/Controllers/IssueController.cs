@@ -12,5 +12,11 @@ namespace Cloudinteractive.PassKitGenerator.Controllers
         {
             _logger = logger;
         }
+
+        [HttpGet]
+        public IActionResult Index()
+        {
+            return View();
+        }
     }
 }
