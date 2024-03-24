@@ -8,6 +8,11 @@ namespace Cloudinteractive.PassKitGenerator.Models
         public Template? Template { get; private set; }
 
         public string? PrimaryFieldValue { get; set; }
+        public string? SecondaryFieldValue { get; set; }
+
+        public string? FirstAuxiliaryFieldValue { get; set; }
+        public string? SecondAuxiliaryFieldValue { get; set; }
+        public IFormFile? ThumbnailImage { get; set; }
 
         public bool TemplateKeyValidation()
         {

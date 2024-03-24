@@ -14,11 +14,12 @@ namespace Cloudinteractive.PassKitGenerator.Controllers
         }
 
         [HttpGet]
+        [AutoValidateAntiforgeryToken]
         public IActionResult Index(IssueModel? model)
         {
             if(model == null) model = new IssueModel();
 
-            //TemplateKey Validation check.
+            //TemplateKey validation check.
             if (model.TemplateKey is not null && !model.TemplateKeyValidation())
             {
                 return View("Error", new ErrorViewModel()
@@ -29,6 +30,23 @@ namespace Cloudinteractive.PassKitGenerator.Controllers
             }
 
             return View(model);
+        }
+
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+        public IActionResult Request(IssueModel? model)
+        {
+            //model validation check.
+            if (model is not null && !model.TemplateKeyValidation())
+            {
+                return View("Error", new ErrorViewModel()
+                {
+                    ErrorId = "INVALID_REQUEST",
+                    Message = "유효하지 않은 요청"
+                });
+            }
+
+            return View("Home/Index");
         }
     }
 }
