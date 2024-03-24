@@ -14,9 +14,21 @@ namespace Cloudinteractive.PassKitGenerator.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult Index(IssueModel? model)
         {
-            return View();
+            if(model == null) model = new IssueModel();
+
+            //TemplateKey Validation check.
+            if (model.TemplateKey is not null && !model.TemplateKeyValidation())
+            {
+                return View("Error", new ErrorViewModel()
+                {
+                    ErrorId = "INVALID_TEMPLATE_KEY",
+                    Message = "유효하지 않은 탬플릿 키."
+                });
+            }
+
+            return View(model);
         }
     }
 }
