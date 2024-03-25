@@ -1,18 +1,27 @@
 name: Docker Image CI
 
 on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+  release:
+    types: [published]
 
 jobs:
 
   build:
-
+  
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build ./src --file ./src/Dockerfile --tag cloudinteractive-passkit-generator:$(date +%s)
+    - name: 'Upload to Docker Hub'
+      uses: how2flow/upload-docker-action@v1
+      with:
+        # Dockerfile path
+        context: ./src/Dockerfile
+        # Docker hub repository
+        repository: cloudinteractive-passkit-generator
+        # Release version number.
+        release: ${{ github.event.release.tag_name }}
+        # Docker hub ID
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        # Docker hub PASSWORD
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+          
