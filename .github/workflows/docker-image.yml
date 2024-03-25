@@ -21,7 +21,7 @@ jobs:
         # Docker hub repository
         repository: cloudinteractive-passkit-generator
         # Release version number.
-        release: ${{ github.event.release.tag_name }}
+        release: test
         # Docker hub ID
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         # Docker hub PASSWORD
