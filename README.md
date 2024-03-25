@@ -1,4 +1,4 @@
-# cloudinteractive-passkit-generator
+ # cloudinteractive-passkit-generator
 <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=Docker&logoColor=white"> <img src="https://img.shields.io/badge/ASP.NET-512BD4?style=for-the-badge&logo=blazor&logoColor=white">
 
 **귀사의 ID 카드, 출입증을 손쉽게 Apple PassKit 프레임워크를 사용하여 Apple Wallet에 추가하십시오.**
@@ -73,6 +73,15 @@ Mode                 LastWriteTime         Length Name
 d----           3/25/2024  8:43 PM                certs
 d----           3/24/2024 11:12 PM                templates
 ```
+
+### Docker에서 구동하기
+Docker Hub에서 [cloudinteractive-passkit-generator](https://hub.docker.com/repository/docker/copperminesp/cloudinteractive-passkit-generator) 이미지를 가져오십시오.
+
+위에서 만든 루트 디렉터리를 컨테이너의 /config에 마운트하고 이미지를 Run 하십시오.
+
+**위의 모든 설명을 제대로 이해했다면, 컨테이너의 파일은 아래와 같이 구성되어야 합니다.**
+
+<img src="img/docker_container.png" style="width: 70%">
 
 ## Dependencies
 - **dotnet-passbook** - https://www.nuget.org/packages/dotnet-passbook/3.2.4?_src=template
