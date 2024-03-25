@@ -1,0 +1,32 @@
+{
+  "templateName" : "클라우드인터렉티브 모바일 사원증",
+  "passTypeIdentifier": "pass.com.cloudint.cwnu",
+  "teamIdentifier": "cloudint.com",
+  "description": "클라우드인터렉티브 모바일 사원증",
+  "organizationName": "클라우드인터렉티브",
+  "logoText": "모바일 사원증",
+  "usingThumbnail": true,
+  "backgroundColor": "#262626",
+  "labelColor": "#b0b0b0",
+  "foregroundColor": "#f0f0f0",
+  "primaryFieldKey": "name",
+  "primaryFieldLabel": "이름",
+  "usingSecondaryField": true,
+  "secondaryFieldKey": "id",
+  "secondaryFieldLabel": "사번",
+  "usingFirstAuxiliaryField": true,
+  "firstAuxiliaryFieldKey": "dept",
+  "firstAuxiliaryFieldLabel": "부서",
+  "usingSecondAuxiliaryField": true,
+  "secondAuxiliaryFieldKey": "rank",
+  "secondAuxiliaryFieldLabel": "직급",
+  "backFields": [
+    {
+      "key" : "warning",
+      "label" : "알림",
+      "value" : "이 사원증은 탬플릿 예제입니다."
+    }
+  ],
+  "usingBarcode": true,
+  "barcodeEncoding": "ISO-8859-1"
+}
