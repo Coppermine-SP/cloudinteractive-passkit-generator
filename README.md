@@ -62,6 +62,7 @@ https://github.com/tomasmcguinness/dotnet-passbook/blob/master/using-openssl.md
 
 <img src="img/template_description.png" style="width: 30%">
 
+모든 템플릿을 templates 디렉토리에 두십시오.
 **모든 작업을 마쳤으면 루트 디렉토리가 아래와 같이 구성되어야 합니다.**
 ```
 copperminesp@MainPC                                                                    
