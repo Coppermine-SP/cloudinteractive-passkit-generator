@@ -63,6 +63,7 @@ https://github.com/tomasmcguinness/dotnet-passbook/blob/master/using-openssl.md
 <img src="img/template_description.png" style="width: 30%">
 
 모든 템플릿을 templates 디렉토리에 두십시오.
+
 **모든 작업을 마쳤으면 루트 디렉토리가 아래와 같이 구성되어야 합니다.**
 ```
 copperminesp@MainPC                                                                    
@@ -85,6 +86,49 @@ Docker Hub에서 [cloudinteractive-passkit-generator](https://hub.docker.com/rep
 **위의 모든 설명을 제대로 이해했다면, 컨테이너의 파일은 아래와 같이 구성되어야 합니다.**
 
 <img src="img/docker_container.png" style="width: 70%">
+
+<hr>
+
+### 패스 발급하기
+패스를 발급하려면 발급 페이지로 가십시오.
+```
+http://localhost/issue
+```
+
+템플릿을 선택하고 필요한 필드를 채우십시오.
+
+<img src="img/issue.png" style="width: 70%">
+
+발급이 완료되면 인증 코드가 부여됩니다.
+
+<img src="img/issue_complete.png" style="width: 70%">
+
+>[!WARNING]
+>**패스는 서버의 인-메모리에만 저장됩니다.**
+>
+> 서버 컨테이너가 재시작되거나 사용자가 인증 코드를 사용하면 서버에서 즉시 패스가 삭제됩니다.
+
+
+<hr>
+
+### 패스 추가하기
+사용자가 패스를 추가하려면 인증 페이지로 가십시오.
+```
+http://localhost
+```
+
+인증 코드를 입력하고 페스를 추가하십시오.
+
+<img src="img/get.png" style="width: 30%">
+
+<img src="img/get_complete.png" style="width: 30%">
+
+사용자가 한번 인증 코드를 사용하면, 더 이상 해당 인증 코드를 사용할 수 없습니다.
+
+<img src="img/get_failed.png" style="width: 30%">
+
+## Showcase
+
 
 ## Dependencies
 - **dotnet-passbook** - https://www.nuget.org/packages/dotnet-passbook/3.2.4?_src=template
