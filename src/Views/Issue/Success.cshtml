@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "발급 성공";
+}
+@section Styles{
+    <style>
+        a {
+            text-decoration: none;
+        }
+
+        p {
+            font-size: 17px;
+        }
+
+        .pass-id {
+            font-size: 36px;
+            letter-spacing: 15px;
+            margin-left: 15px;
+            user-select: 
+        }
+    </style>
+}
+
+<div class="d-flex justify-content-center align-items-center text-center" style="height: 90vh">
+    <div class="row">
+        <div>
+            <img class="mb-3" src="~/img/verified.png" width="130px" />
+        </div>
+        <h2 class="fw-bold">발급 완료</h2>
+        <p>아래의 인증 코드로 발급된 패스를 배포하십시오.</p>
+        <div class="text-center d-lg-inline mb-3">
+            <h6 class="d-lg-inline pass-id mb-0">@ViewBag.passId</h6>
+        </div>
+        <a href="/">홈으로 돌아가기</a>
+    </div>
+</div>

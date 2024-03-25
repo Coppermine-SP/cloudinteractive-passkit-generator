@@ -45,7 +45,21 @@ namespace Cloudinteractive.PassKitGenerator.Controllers
                 });
             }
 
-            return View("Home/Index");
+            try
+            {
+                string passId = Services.PassKit.PassKitGenerator.MakePass(model);
+                ViewBag.passId = passId;
+                return View("Success");
+            }
+            catch(Exception e)
+            {
+                _logger.Log(LogLevel.Error, "PassKitGenerator Exception: " + e.ToString());
+                return View("Error", new ErrorViewModel()
+                {
+                    ErrorId = "EXCEPTION_GENERATOR",
+                    Message = "발급 중 오류 발생"
+                });
+            }
         }
     }
 }

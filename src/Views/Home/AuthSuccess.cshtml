@@ -1,5 +1,36 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewData["Title"] = "인증 성공";
 }
+@section Styles{
+    <style>
+        a {
+            text-decoration: none;
+        }
+
+        p {
+            font-size: 17px;
+        }
+    </style>
+}
+
+@section Scripts{
+    <script>
+        let passId = "@ViewBag.passId";
+
+        document.addEventListener("DOMContentLoaded",
+            function() {
+                window.location.href = `get?code=${passId}`;
+            });
+    </script>
+}
+
+<div class="d-flex justify-content-center align-items-center text-center" style="height: 90vh">
+    <div class="row">
+        <div>
+            <img class="mb-3" src="~/img/verified.png" width="130px" />
+        </div>
+        <h2 class="fw-bold">인증 성공</h2>
+        <p>성공적으로 패스를 수령했습니다.</p>
+        <a href="/">홈으로 돌아가기</a>
+    </div>
+</div>

@@ -2,7 +2,7 @@ using Cloudinteractive.PassKitGenerator.Services;
 using Cloudinteractive.PassKitGenerator.Services.Template;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 
-namespace Cloudinteractive.passkit_generator
+namespace Cloudinteractive.PassKitGenerator
 {
     public class Program
     {
@@ -25,6 +25,7 @@ namespace Cloudinteractive.passkit_generator
             {
                 Logging.LoggerFactory = app.Services.GetService<ILoggerFactory>();
                 TemplateManager.Init();
+                Services.PassKit.PassKitGenerator.Init();
             }
             catch (Exception e)
             {

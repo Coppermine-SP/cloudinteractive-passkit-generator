@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // 모든 필드가 채워졌는지 확인
             if (Array.from(inputs).every(i => i.value)) {
                 const code = Array.from(inputs).map(i => i.value).join('');
-                window.location.href = `auth?code=${code}`;
+                window.location.href = `check?code=${code}`;
             }
         });
     });

@@ -24,10 +24,30 @@ namespace Cloudinteractive.PassKitGenerator.Controllers
             return View();
         }
 
-        [Route("Auth")]
-        public IActionResult Auth(string code)
+        [Route("Check")]
+        public IActionResult Check(string code)
         {
-            return View("AuthFailed");
+            if (String.IsNullOrWhiteSpace(code) || !Services.PassKit.PassKitGenerator.CheckPass(code))
+            {
+                return View("AuthFailed");
+            }
+            else
+            {
+                ViewBag.passId = code;
+                return View("AuthSuccess");
+            }
+        }
+
+        [Route("Get")]
+        public IActionResult Get(string code)
+        {
+            byte[] pass;
+            if (!String.IsNullOrWhiteSpace(code) && Services.PassKit.PassKitGenerator.GetPass(code, out pass))
+            {
+                return new FileContentResult(pass, "application/vnd.apple.pkpass");
+            }
+
+            return new BadRequestResult();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
