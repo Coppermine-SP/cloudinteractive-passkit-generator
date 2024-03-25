@@ -45,6 +45,7 @@ https://github.com/tomasmcguinness/dotnet-passbook/blob/master/using-openssl.md
 - **passbook_password.txt** - 위의 인증서의 암호를 평문으로 저장한 파일
 
 모든 파일을 certs 디렉토리 안에 넣으십시오.
+<hr>
 
 ### 템플릿 준비하기
 새 디렉토리를 생성하고 디렉토리 안에 아래의 구성 요소가 모두 포함되어야 합니다.
@@ -73,6 +74,7 @@ Mode                 LastWriteTime         Length Name
 d----           3/25/2024  8:43 PM                certs
 d----           3/24/2024 11:12 PM                templates
 ```
+<hr>
 
 ### Docker에서 구동하기
 Docker Hub에서 [cloudinteractive-passkit-generator](https://hub.docker.com/repository/docker/copperminesp/cloudinteractive-passkit-generator) 이미지를 가져오십시오.
