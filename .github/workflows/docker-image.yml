@@ -1,0 +1,28 @@
+name: Docker Image CI
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+  
+jobs:
+
+  build:
+  
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 'Upload to Docker Hub'
+      uses: how2flow/upload-docker-action@v1
+      with:
+        # Dockerfile path
+        context: ./src
+        # Docker hub repository
+        repository: cloudinteractive-passkit-generator
+        # Release version number.
+        release: ${{ github.event.release.tag_name }}
+        # Docker hub ID
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        # Docker hub PASSWORD
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+          
