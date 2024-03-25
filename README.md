@@ -127,7 +127,35 @@ http://localhost
 
 <img src="img/get_failed.png" style="width: 30%">
 
+```
+2024-03-26 00:32:12 info: PassKitGenerator[0]
+2024-03-26 00:32:12       Create new pass #S9D9 (template: cloudinteractive_moblie_pass).
+2024-03-26 00:33:40 info: PassKitGenerator[0]
+2024-03-26 00:33:40       Pass destroyed #S9D9.
+```
+
 ## Showcase
+**인증 페이지**
+
+<img src="img/auth.png" style="width: 30%">
+
+<img src="img/get_complete.png" style="width: 30%">
+
+<img src="img/get_failed.png" style="width: 30%">
+
+<img src="img/auth_pc.png" style="width: 80%">
+
+<hr>
+
+**발급 페이지**
+
+<img src="img/issue.png" style="width: 70%">
+
+<hr>
+
+**약관 페이지**
+
+<img src="img/terms.png" style="width: 30%">
 
 
 ## Dependencies
