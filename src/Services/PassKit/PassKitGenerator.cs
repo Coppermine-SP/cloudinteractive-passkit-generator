@@ -2,6 +2,7 @@
 using Passbook.Generator;
 using System.Security.Cryptography.X509Certificates;
 using Passbook.Generator.Fields;
+using System.Reflection;
 
 namespace Cloudinteractive.PassKitGenerator.Services.PassKit
 {
@@ -139,7 +140,8 @@ namespace Cloudinteractive.PassKitGenerator.Services.PassKit
             {
                  if(!_passDictionary.TryGetValue(passId, out pass)) return false;
                  _passDictionary.Remove(passId);
-                 return true;
+                _logger.Log(LogLevel.Information, $"Pass destroyed #{passId}.");
+                return true;
             }
         }
     }
