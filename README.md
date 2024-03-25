@@ -17,7 +17,6 @@
 ### Table of Content
 - [Requirements](#requirements)
 - [How to Use](#how-to-use)
-- [API Documentation](#api-documentation)
 - [Dependencies](#dependencies)
 - [Showcase](#showcase)
 
@@ -31,6 +30,49 @@
 >유효한 Apple Pass Type ID Certificate를 발급받기 위해서 Apple Developer Program이 필요합니다.
 
 ## How to Use
+**사용하기 전에 인증서와 템플릿을 준비하여 Docker에 마운트 해야 합니다.**
+
+### 인증서 준비하기
+먼저, 아래 페이지에서 Apple WWDR Intermediate Certificate G4 중간 인증서를 받으십시오:
+https://www.apple.com/certificateauthority/
+
+그리고 아래 절차를 따라 dotnet-passbook에서 사용할 수 있게 Pass Type ID 인증서를 준비하십시오:
+https://github.com/tomasmcguinness/dotnet-passbook/blob/master/using-openssl.md
+
+총 3개의 인증서 파일이 준비되어야 합니다.
+- **AppleWWDRCAG4.cer** - Apple WWDR Intermediate Certificate G4
+- **passbook.pfx** - 준비한 Apple Pass Type ID 인증서
+- **passbook_password.txt** - 위의 인증서의 암호를 평문으로 저장한 파일
+
+모든 파일을 certs 디렉토리 안에 넣으십시오.
+
+### 템플릿 준비하기
+새 디렉토리를 생성하고 디렉토리 안에 아래의 구성 요소가 모두 포함되어야 합니다.
+
+디렉토리의 이름은 템플릿의 고유한 ID가 됩니다.
+
+- **metadata.json** - 템플릿 메타데이터
+- **img/icon.png** - 아이콘 이미지
+- **img/logo.png** - 로고 이미지 (패스의 상단에 표시)
+
+메타데이터는 레포지토리의 예시 템플릿 메타데이터를 참조하십시오.
+
+메타데이터 일부 속성에 대한 자세한 설명은 [Apple Developer Document](https://developer.apple.com/documentation/walletpasses/pass) 문서를 참조하십시오.
+
+<img src="img/template_description.png" style="width: 30%">
+
+모든 작업을 마쳤으면 루트 디렉토리가 아래와 같이 구성되어야 합니다.
+```
+copperminesp@MainPC                                                                    
+~\Desktop\test ❯ ls
+
+    Directory: C:\Users\Coppermine\Desktop\test
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           3/25/2024  8:43 PM                certs
+d----           3/24/2024 11:12 PM                templates
+```
 
 ## Dependencies
 - **dotnet-passbook** - https://www.nuget.org/packages/dotnet-passbook/3.2.4?_src=template
