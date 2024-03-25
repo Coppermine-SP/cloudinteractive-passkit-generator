@@ -17,7 +17,7 @@ jobs:
       uses: how2flow/upload-docker-action@v1
       with:
         # Dockerfile path
-        context: ./src/Dockerfile
+        context: ./src
         # Docker hub repository
         repository: cloudinteractive-passkit-generator
         # Release version number.
