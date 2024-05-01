@@ -1,6 +1,11 @@
  # cloudinteractive-passkit-generator
 <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=Docker&logoColor=white"> <img src="https://img.shields.io/badge/ASP.NET-512BD4?style=for-the-badge&logo=blazor&logoColor=white">
 
+>[!NOTE]
+>**Currently, this project is only available in Korean (국문).**
+>
+>English may be supported in the future release. 
+
 **귀사의 ID 카드, 출입증을 손쉽게 Apple PassKit 프레임워크를 사용하여 Apple Wallet에 추가하십시오.**
 
 이 프로젝트는 Microsoft ASP.NET MVC 프레임워크를 통해 웹에서 사원증, 출입 카드등을 쉽게 Apple PassKit으로 생성하는 도구입니다.
